@@ -17,7 +17,7 @@ RUN apt-get update \
 RUN git clone https://github.com/neovim/neovim.git
 WORKDIR neovim
 
-ADD local.mk .
+ADD local.mk /neovim
 RUN make install -j$($nproc)
 
 RUN mkdir -p $HOME/.config/nvim
